@@ -36,26 +36,24 @@ struct LastView: View {
                 Text("Level up!👍")
                     .font(.system(size: 24, weight: .bold))
                     .foregroundColor(.white)
-//                Task.sleep(1)
             }
             .frame(width: 280, height: 60)
-                .background(animating == 1 ? .blue : .black, in: RoundedRectangle(cornerRadius: 30))
-                .animation(.easeOut.delay(0.7), value: animating)
-                .offset(y: 320)
-                
-                if (animating == 2) {
-                    FireworksView(
-                        config: FireworksConfig(
-                            intensity: .high,
-                            lifetime: .long,
-                            initialVelocity: .fast,
-                            fadeOut: .slow
-                        )
-                        
+            .background(animating == 1 ? .blue : .black, in: RoundedRectangle(cornerRadius: 30))
+            .animation(.easeOut.delay(0.7), value: animating)
+            .offset(y: 320)
+            
+            if (animating == 2) {
+                FireworksView(
+                    config: FireworksConfig(
+                        intensity: .high,
+                        lifetime: .long,
+                        initialVelocity: .fast,
+                        fadeOut: .slow
                     )
-                }
+                    
+                )
+            }
         }
-        
     }
 }
 
